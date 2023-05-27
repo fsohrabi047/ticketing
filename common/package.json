@@ -1,6 +1,6 @@
 {
-  "name": "@far_ticketing/commone",
-  "version": "1.0.1",
+  "name": "@far_ticketing/common",
+  "version": "1.0.0",
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
