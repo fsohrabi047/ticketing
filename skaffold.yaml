@@ -3,32 +3,32 @@ kind: Config
 deploy:
   kubectl:
     manifests:
-      - "infra/k8s/*.yaml"
+    - "infra/k8s/*.yaml"
 build:
   local:
     push: false
   artifacts:
-    - image: ticketing/auth
-      context: auth
-      docker:
-        dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: "src/**/*.ts"
-            dest: .
-    - image: cygnetops/ticketing-client
-      context: client
-      docker:
-        dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: '**/*.js'
-            dest: .
-    - image: ticketing/tickets
-      context: tickets
-      docker:
-        dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: "src/**/*.ts"
-            dest: .
+  - image: ticketing/auth
+    context: auth
+    docker:
+      dockerfile: Dockerfile
+    sync:
+      manual:
+      - src: "src/**/*.ts"
+        dest: .
+  - image: cygnetops/ticketing-client
+    context: client
+    docker:
+      dockerfile: Dockerfile
+    sync:
+      manual:
+      - src: '**/*.js'
+        dest: .
+  - image: fsohrabi047/ticketing-tickets
+    context: tickets
+    docker:
+      dockerfile: Dockerfile
+    sync:
+      manual:
+      - src: "src/**/*.ts"
+        dest: .
