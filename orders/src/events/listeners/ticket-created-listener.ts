@@ -3,7 +3,7 @@ import { Subjects, Listener, TicketCreatedEvent } from "@far_ticketing/common";
 import { Ticket } from "../../models/ticket";
 import { queueGroupName } from "./queue-group-name";
 
-export class TicektCreatedListener extends Listener<TicketCreatedEvent> {
+export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
     readonly subject = Subjects.TicketCreated;
     queueGroupName: string = queueGroupName;
 
